@@ -34,8 +34,9 @@ class Producto {
     private $DescripcionLarga;
     private $Imagen;
     private $Valoracion;
+    private $IDCategoria;
 
-    function __construct( $ID, $Nombre, $Stock, $Descuento, $Prime, $Precio, $DescripcionCorta, $DescripcionLarga, $Imagen, $Valoracion) {
+    function __construct( $ID, $Nombre, $Stock, $Descuento, $Prime, $Precio, $DescripcionCorta, $DescripcionLarga, $Imagen, $Valoracion, $IDCategoria) {
        $this -> ID = $ID;
        $this -> Nombre = $Nombre;
        $this -> Stock = $Stock;
@@ -46,7 +47,9 @@ class Producto {
        $this -> DescripcionLarga = $DescripcionLarga;
        $this -> Imagen = $Imagen;
        $this -> Valoracion = $Valoracion;
+       $this -> IDCategoria = $IDCategoria;
    }
+   
 
    
     public function getID()
