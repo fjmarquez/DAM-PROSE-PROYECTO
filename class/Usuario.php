@@ -41,11 +41,6 @@
             return $this->ID;
         }
 
-        public function setID($ID)
-        {
-            $this->ID = $ID;
-        }
-
         public function getCorreo()
         {
             return $this->correo;
