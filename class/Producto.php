@@ -24,6 +24,7 @@
      */
 
 class Producto {
+    //Declaracion de los atributos de la clase
     private $ID;
     private $Nombre;
     private $Stock;
@@ -36,6 +37,7 @@ class Producto {
     private $Valoracion;
     private $IDCategoria;
 
+    //Constructor
     function __construct( $ID, $Nombre, $Stock, $Descuento, $Prime, $Precio, $DescripcionCorta, $DescripcionLarga, $Imagen, $Valoracion, $IDCategoria) {
        $this -> ID = $ID;
        $this -> Nombre = $Nombre;
@@ -50,7 +52,7 @@ class Producto {
        $this -> IDCategoria = $IDCategoria;
    }
    
-
+    //Declaración de las propiedades de la clase
    
     public function getID()
     {
@@ -168,6 +170,17 @@ class Producto {
     public function setValoracion($Valoracion)
     {
         $this->Valoracion = $Valoracion;
+
+        return $this;
+    }
+
+    public function getIDCategoria(){
+        return $this->IDCategoria;
+    }
+
+    public function setIDCategoria($IDCategoria)
+    {
+        $this->IDCategoria = $IDCategoria;
 
         return $this;
     }
