@@ -1,7 +1,7 @@
 <?php
 
 require_once "DAO.php";
-require_once  "Person.php";
+require_once  "Usuario.php.php";
 
 /*Clase Data Access Object para manipular la clase Usuario en una base de datos MySQL*/
 class UsuarioDAO extends DAO
