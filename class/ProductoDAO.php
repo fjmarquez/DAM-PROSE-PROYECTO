@@ -162,6 +162,7 @@
                 //Guardamos el objeto persona en la array
                 $products[$i] = $product;
             }
+            return $products;
         }
     
 
