@@ -10,6 +10,13 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -22,6 +29,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -29,6 +37,16 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Escritorio\.Net-Ejercicios\PHP\DAM-PROSE-PROYECTO\class" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="login.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/DAM-PROSE-PROYECTO/pages/login.php" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.login.php" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -40,6 +58,8 @@
       <updated>1603380360076</updated>
       <workItem from="1603380361680" duration="1018000" />
       <workItem from="1603722328423" duration="2613000" />
+      <workItem from="1603900695029" duration="2117000" />
+      <workItem from="1603902938190" duration="3168000" />
     </task>
     <servers />
   </component>
@@ -55,9 +75,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="697" y="242" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603789397810" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1603788874572">
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1603900884290">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603788874572" />
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603900884290" />
   </component>
 </project>

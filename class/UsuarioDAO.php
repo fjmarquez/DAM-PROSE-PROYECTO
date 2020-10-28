@@ -16,7 +16,7 @@
 
         public function esUsuarioRegistrado($nombre, $contraseña){
 
-            //Abrimos la conexión
+            //Abrimos la conexión   
             $this->openConection();
 
             //Preparamos la consulta
