@@ -19,22 +19,24 @@
 
     <body>
         <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-md-6 col-md-offset-4">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Sign In</h5>
-                            <form class="col-md-4 col-md-offset-4">
-                                <div class="form-group">
-                                    <input class="form-control" type="text" placeholder="Usuario">
-                                </div>
-
-                                <div class="form-group">
-                                    <input class="form-control" type="text" placeholder="Contraseña">
-                                </div>
-                            </form>
+            <div class="row">
+                <div class="jumbotron margintop col-md-4 col-md-offset-4">
+                    <h3 class="text-center">Sign In to TicZone</h3>
+                    <form>
+                        <div class="form-group">
+                            <input class="form-control" type="text" placeholder="Usuario">
                         </div>
-                    </div>
+
+                        <div class="form-group">
+                            <input class="form-control" type="text" placeholder="Contraseña">
+                        </div>
+
+                        <div class="text-center">
+                            <button class="btn type="submit">Sign in</button>
+                        </div>
+                    </form>
                 </div>
+            </div>
             </div>
         </div>
     </body>

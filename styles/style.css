@@ -1,3 +1,20 @@
-.card{
-    background-color: aqua;
+.margintop{
+    margin-top: 12%;
+}
+
+body{
+    background-color: #ABDAFC;
+}
+
+.btn{
+    background-color: #8CFF98;
+    color: white;
+    font-weight: bold;
+}
+
+.btn:hover{
+    background-color: #60A561;
+    color: white;
+    font-weight: bold;
+    border: 0px;
 }
