@@ -5,7 +5,7 @@
 
     class ValoracionDAO extends DAO{
 
-        const SCHEMA="TiendaElectronicaFranciscoManuel";
+        const SCHEMA="ProyectoFranciscoManuel";
         const NAME_TABLE="Valoraciones";
 
         /*

@@ -5,7 +5,7 @@
     /*Clase Data Access Object para manipular la clase Categoria en una base de datos MySQL*/
     class CategoriaDAO extends DAO
     {
-        const SCHEMA="`TiendaElectronicaFranciscoManuel`";
+        const SCHEMA="`ProyectoFranciscoManuel`";
         const NAME_TABLE="`Categorias`";
 
         /*

@@ -6,7 +6,7 @@
     /*Clase Data Access Object para manipular la clase Usuario en una base de datos MySQL*/
     class ProductoDAO extends DAO{
 
-        const SCHEMA="TiendaElectronicaFranciscoManuel";
+        const SCHEMA="ProyectoFranciscoManuel";
         const NAME_TABLE="Productos";
 
         /*
