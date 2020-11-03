@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="1256e2a5-156a-4d4f-a2ec-bc96cf80971b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -32,7 +35,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/class" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -42,10 +45,17 @@
       <recent name="D:\Escritorio\.Net-Ejercicios\PHP\DAM-PROSE-PROYECTO\class" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="login.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/DAM-PROSE-PROYECTO/pages/login.php" useBuiltInWebServerPort="true">
+  <component name="RunManager" selected="PHP Built-in Web Server.Unnamed">
+    <configuration name="login.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/DAM-PROSE-PROYECTO/pages/login.php">
       <method v="2" />
     </configuration>
+    <configuration name="Unnamed" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" nameIsGenerated="true" document_root="$PROJECT_DIR$" port="8080">
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.login.php" />
+      <item itemvalue="PHP Built-in Web Server.Unnamed" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JavaScript Debug.login.php" />
@@ -66,7 +76,7 @@
       <workItem from="1603902938190" duration="3168000" />
       <workItem from="1604391947934" duration="119000" />
       <workItem from="1604392118970" duration="3038000" />
-      <workItem from="1604418167914" duration="124000" />
+      <workItem from="1604418167914" duration="5849000" />
     </task>
     <servers />
   </component>
@@ -74,17 +84,85 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="336" y="361" key="#SQL_Dialects" timestamp="1604423239475">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="336" y="361" key="#SQL_Dialects/0.0.1920.1040@0.0.1920.1040" timestamp="1604423239474" />
+    <state x="757" y="365" key="#Web_Browsers" timestamp="1604422853937">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="757" y="365" key="#Web_Browsers/0.0.1920.1040@0.0.1920.1040" timestamp="1604422853937" />
+    <state x="414" y="174" width="1092" height="805" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604422858137">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="174" width="1092" height="805" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604422858137" />
     <state x="765" y="201" key="#com.intellij.ide.util.MemberChooser" timestamp="1603381356291">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="201" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1603381356291" />
+    <state x="739" y="274" key="FileChooserDialogImpl" timestamp="1604422831660">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="739" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604422831660" />
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1604423151297">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604423151297" />
+    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1604423151297">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604423151297" />
+    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1604423151297">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604423151297" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1604423151297">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604423151297" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1604423151299">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604423151299" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1604423151298">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604423151298" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1604423151297">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604423151297" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1604423151299">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604423151299" />
+    <state width="1877" height="348" key="GridCell.Tab.2.bottom" timestamp="1604423151300">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604423151300" />
+    <state width="1877" height="348" key="GridCell.Tab.2.center" timestamp="1604423151300">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604423151300" />
+    <state width="1877" height="348" key="GridCell.Tab.2.left" timestamp="1604423151299">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604423151299" />
+    <state width="1877" height="348" key="GridCell.Tab.2.right" timestamp="1604423151300">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604423151300" />
     <state x="697" y="242" key="NewPhpClassDialog" timestamp="1603789397810">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="697" y="242" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603789397810" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1603900884290">
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1604420419219">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603900884290" />
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604420419219" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1604422743772">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1604422743772" />
   </component>
 </project>
