@@ -1,32 +1,32 @@
 <?php
 
     require_once "DAO.php";
-    require_once  "Usuario.php";
+    require_once  "User.php";
 
-    /*Clase Data Access Object para manipular la clase Usuario en una base de datos MySQL*/
-    class UsuarioDAO extends DAO
+    /*Clase Data Access Object para manipular la clase User en una base de datos MySQL*/
+    class UserDAO extends DAO
     {
         const SCHEMA="ProyectoFranciscoManuel";
-        const NAME_TABLE="Usuarios";
+        const NAME_TABLE="Users";
 
         /*
-         * Comprobar si existe un registro de usuario con el nombre y la contraseña pasada por parámetros.
-         * Si existe el registro, se devolverá el ID del usuario, en caso contrario devolverá false.
+         * Comprobar si existe un registro de user con el name y la contraseña pasada por parámetros.
+         * Si existe el registro, se devolverá el ID del user, en caso contrario devolverá false.
          */
 
-        public function esUsuarioRegistrado($nombre, $contrasena){
+        public function esUserRegistrado($name, $password){
 
             //Abrimos la conexión   
             $this->openConection();
 
             $sql = "SELECT ID FROM ".self::SCHEMA.".".self::NAME_TABLE.
-            " WHERE Nombre = ? AND Contrasena = ?";
+            " WHERE Name = ? AND Password = ?";
 
             //Preparamos la consulta
             $stmt=$this->conexion->prepare($sql);
             
             //Añadimos los datos
-            $stmt->bind_param('ss', $nombre, $contrasena);
+            $stmt->bind_param('ss', $name, $password);
             
             //Ejecutamos la consulta y recogemos el resultado
             $stmt->execute();
@@ -35,31 +35,31 @@
             
             if($result->num_rows > 0)
             {
-                $usuario = $this->recuperarUsuario($result->fetch_assoc()["ID"]);
+                $user = $this->recuperarUser($result->fetch_assoc()["ID"]);
                 
             }
             else
             {
-                $usuario = false;
+                $user = false;
             }
 
             //Cerramos la conexión
             $this->closeConection();
 
             //Devolvemos el resultado
-            return $usuario;
+            return $user;
         }
 
         /*
-         * Recuperar un registro de usuario por ID y devolver un objeto Usuario.
+         * Recuperar un registro de user por ID y devolver un objeto User.
          */
 
-        public function recuperarUsuario($IDUsuario){
+        public function recuperarUser($IDUser){
 
             //Abrimos la conexión
             //$this->openConection();
 
-            $sql = "SELECT Correo, Contrasena, Nombre, Admin FROM ".self::SCHEMA.".".self::NAME_TABLE.
+            $sql = "SELECT Name, Mail, Password, Admin FROM ".self::SCHEMA.".".self::NAME_TABLE.
             " WHERE ID = ?";
             echo $sql;
 
@@ -67,7 +67,7 @@
             $stmt=$this->conexion->prepare($sql);
 
             //Añadimos los datos
-            $stmt->bind_param('i', $IDUsuario);
+            $stmt->bind_param('i', $IDUser);
 
             //Ejecutamos la consulta y recogemos el resultado
             $stmt->execute();
@@ -79,28 +79,29 @@
                 //Obtenemos el registro
                 $row = $result->fetch_assoc();
 
-                $usuario = new Usuario($IDUsuario,
-                                       $row["Correo"],
-                                       $row["Contrasena"],
+                $user = new Usuario($IDUser,
+                                       $row["Name"],
+                                       $row["Mail"],
+                                       $row["Password"],
                                        $row["Admin"]);
             }
             else
             {
-                $usuario = false;
+                $user = false;
             }
 
             //Cerramos la conexión
             //$this->closeConection();
 
             //Devolvemos el resultado
-            return $usuario;
+            return $user;
         }
 
         //Inserta un objeto de la clase persona en la BD
-        public function insertarUsuario($usuario){
+        public function insertarUser($user){
 
             $sql="INSERT INTO ".self::SCHEMA.".".self::NAME_TABLE.
-                " (`Correo`, `Contrasena`, `Nombre`, `Admin`) VALUES ('".$usuario->getCorreo()."', '".$usuario->getContrasena()."', '".$usuario->getNombre()."','".$usuario->getAdmin()."')";
+                " (Mail, Password, Name, Admin) VALUES ('".$user->getCorreo()."', '".$user->getpassword()."', '".$user->getName()."','".$user->getAdmin()."')";
 
             parent::query($sql);
         }

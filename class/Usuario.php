@@ -5,8 +5,9 @@
      * Propiedades Básicas:
      *
      *      - ID -> int, Consultable
-     *      - Correo -> String, Consultable y Modificable
-     *      - Contraseña -> String, Consultable y Modificable
+     *      - name -> string, Consultable y modificable
+     *      - mail -> String, Consultable y Modificable
+     *      - password -> String, Consultable y Modificable
      *      - Admin -> Boolean, Consultable y Modificable
      *
      * Propiedades Derivadas: No hay
@@ -20,45 +21,55 @@
     {
         //Declaración de los atributos de la clase
         private $ID;
-        private $correo;
-        private $contraseña;
+        private $name;
+        private $mail;
+        private $password;
         private $admin;
 
         //Constructor
-        public function __construct($ID, $correo, $contraseña, $admin)
+        public function __construct($ID, $name, $mail, $password, $admin)
         {
             $this->ID = $ID;
-            $this->correo = $correo;
-            $this->contraseña = $contraseña;
+            $this->name = $name;
+            $this->mail = $mail;
+            $this->password = $password;
             $this->admin = $admin;
         }
 
         //Declaración de las propiedades de la clase
 
-        //ID
+        
         public function getID()
         {
             return $this->ID;
         }
 
-        public function getCorreo()
-        {
-            return $this->correo;
+        public function getName(){
+            return $this->name;
         }
 
-        public function setCorreo($correo)
-        {
-            $this->correo = $correo;
+        public function setName($name){
+            $this->name = $name;
         }
 
-        public function getContraseña()
+        public function getmail()
         {
-            return $this->contraseña;
+            return $this->mail;
         }
 
-        public function setContraseña($contraseña)
+        public function setmail($mail)
         {
-            $this->contraseña = $contraseña;
+            $this->mail = $mail;
+        }
+
+        public function getpassword()
+        {
+            return $this->password;
+        }
+
+        public function setpassword($password)
+        {
+            $this->password = $password;
         }
 
         public function getAdmin()
