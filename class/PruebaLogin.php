@@ -3,6 +3,4 @@
 
     $login = new UsuarioDAO();
 
-    //$login->recuperarUsuario(1);
-
-    echo $login->esUsuarioRegistrado("Manuel", "prueba");
+    $user = $login->esUsuarioRegistrado("Manuel", "prueba");

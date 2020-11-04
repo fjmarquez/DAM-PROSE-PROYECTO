@@ -14,27 +14,29 @@
          * Si existe el registro, se devolverá el ID del usuario, en caso contrario devolverá false.
          */
 
-        public function esUsuarioRegistrado($nombre, $contraseña){
+        public function esUsuarioRegistrado($nombre, $contrasena){
 
             //Abrimos la conexión   
             $this->openConection();
 
+            $sql = "SELECT ID FROM ".self::SCHEMA.".".self::NAME_TABLE.
+            " WHERE Nombre = ? AND Contrasena = ?";
+
             //Preparamos la consulta
-            $stmt=$this->conexion->prepare(
-                "SELECT ID FROM ".self::SCHEMA.".".self::NAME_TABLE.
-                " WHERE Nombre = ? AND Contraseña = ?");
-
+            $stmt=$this->conexion->prepare($sql);
+            
             //Añadimos los datos
-            $stmt->bind_param('ss', $nombre, $contraseña);
-
+            $stmt->bind_param('ss', $nombre, $contrasena);
+            
             //Ejecutamos la consulta y recogemos el resultado
             $stmt->execute();
-
+            
             $result = $stmt->get_result();
-
+            
             if($result->num_rows > 0)
             {
                 $usuario = $this->recuperarUsuario($result->fetch_assoc()["ID"]);
+                
             }
             else
             {
@@ -55,15 +57,17 @@
         public function recuperarUsuario($IDUsuario){
 
             //Abrimos la conexión
-            $this->openConection();
+            //$this->openConection();
+
+            $sql = "SELECT Correo, Contrasena, Nombre, Admin FROM ".self::SCHEMA.".".self::NAME_TABLE.
+            " WHERE ID = ?";
+            echo $sql;
 
             //Preparamos la consulta
-            $stmt=$this->conexion->prepare(
-                "SELECT Correo, Contraseña, Nombre, Admin FROM ".self::SCHEMA.".".self::NAME_TABLE.
-                " WHERE ID = ?");
+            $stmt=$this->conexion->prepare($sql);
 
             //Añadimos los datos
-            $stmt->bind_param('s', $IDUsuario);
+            $stmt->bind_param('i', $IDUsuario);
 
             //Ejecutamos la consulta y recogemos el resultado
             $stmt->execute();
@@ -77,7 +81,7 @@
 
                 $usuario = new Usuario($IDUsuario,
                                        $row["Correo"],
-                                       $row["Contraseña"],
+                                       $row["Contrasena"],
                                        $row["Admin"]);
             }
             else
@@ -86,7 +90,7 @@
             }
 
             //Cerramos la conexión
-            $this->closeConection();
+            //$this->closeConection();
 
             //Devolvemos el resultado
             return $usuario;
@@ -96,7 +100,7 @@
         public function insertarUsuario($usuario){
 
             $sql="INSERT INTO ".self::SCHEMA.".".self::NAME_TABLE.
-                " (`Correo`, `Contraseña`, `Nombre`, `Admin`) VALUES ('".$usuario->getCorreo()."', '".$usuario->getContraseña()."', '".$usuario->getNombre()."','".$usuario->getAdmin()."')";
+                " (`Correo`, `Contrasena`, `Nombre`, `Admin`) VALUES ('".$usuario->getCorreo()."', '".$usuario->getContrasena()."', '".$usuario->getNombre()."','".$usuario->getAdmin()."')";
 
             parent::query($sql);
         }
