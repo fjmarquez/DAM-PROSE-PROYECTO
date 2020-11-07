@@ -8,7 +8,7 @@
      *      - name -> string, Consultable y modificable
      *      - mail -> String, Consultable y Modificable
      *      - password -> String, Consultable y Modificable
-     *      - Admin -> Boolean, Consultable y Modificable
+     *      - admin -> Boolean, Consultable y Modificable
      *
      * Propiedades Derivadas: No hay
      *
@@ -52,22 +52,22 @@
             $this->name = $name;
         }
 
-        public function getmail()
+        public function getMail()
         {
             return $this->mail;
         }
 
-        public function setmail($mail)
+        public function setMail($mail)
         {
             $this->mail = $mail;
         }
 
-        public function getpassword()
+        public function getPassword()
         {
             return $this->password;
         }
 
-        public function setpassword($password)
+        public function setPassword($password)
         {
             $this->password = $password;
         }

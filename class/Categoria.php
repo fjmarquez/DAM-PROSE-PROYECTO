@@ -6,7 +6,7 @@
      * Propiedades Básicas:
      *
      *      - ID -> int, Consultable
-     *      - categoria -> String, Consultable y Modificable
+     *      - category -> String, Consultable y Modificable
      *
      * Propiedades Derivadas: No hay
      *
@@ -19,13 +19,13 @@
     {
         //Declaración de los atributos de la clase
         private $ID;
-        private $categoria;
+        private $category;
 
         //Constructor
-        public function __construct($ID, $categoria)
+        public function __construct($ID, $category)
         {
             $this->ID = $ID;
-            $this->categoria = $categoria;
+            $this->category = $category;
         }
 
         //Declaración de las propiedades de la clase
@@ -36,13 +36,13 @@
             return $this->ID;
         }
 
-        public function getCategoria()
+        public function getCategory()
         {
-            return $this->categoria;
+            return $this->category;
         }
 
-        public function setCategoria($categoria)
+        public function setCategory($category)
         {
-            $this->categoria = $categoria;
+            $this->category = $category;
         }
     }

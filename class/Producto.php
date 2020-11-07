@@ -6,15 +6,15 @@
      * Propiedades Básicas:
      *
      *      - ID -> int, Consultable
-     *      - Nombre -> String, Consultable y Modificable
+     *      - Name -> String, Consultable y Modificable
      *      - Stock -> int, Consultable y Modificable
-     *      - Descuento -> double, Consultable y Modificable
+     *      - Discount -> double, Consultable y Modificable
      *      - Prime -> boolean, Consultable y Modificable
-     *      - Precio -> int, Consultable y Modificable
-     *      - DescripcionCorta -> String, Consultable y Modificable
-     *      - DescripcionLarga -> String, Consultable y Modificable
-     *      - Imagen -> String, Consultable y Modificable    
-     *      - Valoracion -> Double, Consultable y Modificable      
+     *      - Price -> int, Consultable y Modificable
+     *      - ShortDescription -> String, Consultable y Modificable
+     *      - LongDescription -> String, Consultable y Modificable
+     *      - Image -> String, Consultable y Modificable
+     *      - Category -> Category, Consultable y Modificable
      *
      * Propiedades Derivadas: No hay
      *
@@ -26,30 +26,28 @@
 class Producto {
     //Declaracion de los atributos de la clase
     private $ID;
-    private $Nombre;
+    private $Name;
     private $Stock;
-    private $Descuento;
+    private $Discount;
     private $Prime;
-    private $Precio;
-    private $DescripcionCorta;
-    private $DescripcionLarga;
-    private $Imagen;
-    private $Valoracion;
-    private $IDCategoria;
+    private $Price;
+    private $ShortDescription;
+    private $LongDescription;
+    private $Image;
+    private $Category;
 
     //Constructor
-    function __construct( $ID, $Nombre, $Stock, $Descuento, $Prime, $Precio, $DescripcionCorta, $DescripcionLarga, $Imagen, $Valoracion, $IDCategoria) {
+    function __construct($ID, $Name, $Stock, $Discount, $Prime, $Price, $ShortDescription, $LongDescription, $Image, $IDCategory) {
        $this -> ID = $ID;
-       $this -> Nombre = $Nombre;
+       $this -> Name = $Name;
        $this -> Stock = $Stock;
-       $this -> Descuento = $Descuento;
+       $this -> Discount = $Discount;
        $this -> Prime = $Prime;
-       $this -> Precio = $Precio;
-       $this -> DescripcionCorta = $DescripcionCorta;
-       $this -> DescripcionLarga = $DescripcionLarga;
-       $this -> Imagen = $Imagen;
-       $this -> Valoracion = $Valoracion;
-       $this -> IDCategoria = $IDCategoria;
+       $this -> Price = $Price;
+       $this -> ShortDescription = $ShortDescription;
+       $this -> LongDescription = $LongDescription;
+       $this -> Image = $Image;
+       $this -> Category = $IDCategory;
    }
    
     //Declaración de las propiedades de la clase
@@ -66,14 +64,14 @@ class Producto {
         return $this;
     }
 
-    public function getNombre()
+    public function getName()
     {
-        return $this->Nombre;
+        return $this->Name;
     }
 
-    public function setNombre($Nombre)
+    public function setName($Name)
     {
-        $this->Nombre = $Nombre;
+        $this->Name = $Name;
 
         return $this;
     }
@@ -90,14 +88,14 @@ class Producto {
         return $this;
     }
 
-    public function getDescuento()
+    public function getDiscount()
     {
-        return $this->Descuento;
+        return $this->Discount;
     }
 
-    public function setDescuento($Descuento)
+    public function setDiscount($Discount)
     {
-        $this->Descuento = $Descuento;
+        $this->Discount = $Discount;
 
         return $this;
     }
@@ -114,73 +112,61 @@ class Producto {
         return $this;
     }
 
-    public function getPrecio()
+    public function getPrice()
     {
-        return $this->Precio;
+        return $this->Price;
     }
 
-    public function setPrecio($Precio)
+    public function setPrice($Price)
     {
-        $this->Precio = $Precio;
+        $this->Price = $Price;
 
         return $this;
     }
 
-    public function getDescripcionCorta()
+    public function getShortDescription()
     {
-        return $this->DescripcionCorta;
+        return $this->ShortDescription;
     }
 
-    public function setDescripcionCorta($DescripcionCorta)
+    public function setShortDescription($ShortDescription)
     {
-        $this->DescripcionCorta = $DescripcionCorta;
+        $this->ShortDescription = $ShortDescription;
 
         return $this;
     }
 
-    public function getDescripcionLarga()
+    public function getLongDescription()
     {
-        return $this->DescripcionLarga;
+        return $this->LongDescription;
     }
 
-    public function setDescripcionLarga($DescripcionLarga)
+    public function setLongDescription($LongDescription)
     {
-        $this->DescripcionLarga = $DescripcionLarga;
+        $this->LongDescription = $LongDescription;
 
         return $this;
     }
 
-    public function getImagen()
+    public function getImage()
     {
-        return $this->Imagen;
+        return $this->Image;
     }
 
-    public function setImagen($Imagen)
+    public function setImage($Image)
     {
-        $this->Imagen = $Imagen;
+        $this->Image = $Image;
 
         return $this;
     }
 
-    public function getValoracion()
-    {
-        return $this->Valoracion;
+    public function getCategory(){
+        return $this->Category;
     }
 
-    public function setValoracion($Valoracion)
+    public function setCategory($Category)
     {
-        $this->Valoracion = $Valoracion;
-
-        return $this;
-    }
-
-    public function getIDCategoria(){
-        return $this->IDCategoria;
-    }
-
-    public function setIDCategoria($IDCategoria)
-    {
-        $this->IDCategoria = $IDCategoria;
+        $this->Category = $Category;
 
         return $this;
     }

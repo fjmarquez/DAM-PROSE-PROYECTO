@@ -5,10 +5,10 @@
      *
      * Propiedades Básicas:
      *
-     *      - IDUsuario -> int, Consultable
-     *      - IDProducto -> int, Consultable
-     *      - Valoracion -> double, Consultable y Modificable
-     *      - Reseña -> string, Consultable y Modificable    
+     *      - user -> User, Consultable
+     *      - product -> Product, Consultable
+     *      - rating -> double, Consultable y Modificable
+     *      - review -> string, Consultable y Modificable
      *
      * Propiedades Derivadas: No hay
      *
@@ -18,63 +18,63 @@
      */
 
     class Valoracion{
-        private $IDUsuario;
-        private $IDProducto;
-        private $Valoracion;
-        private $Reseña;
+        private $User;
+        private $Product;
+        private $Rating;
+        private $Review;
 
-        function __construct($IDUsuario, $IDProducto, $Valoracion, $Reseña)
+        function __construct($User, $Product, $Rating, $Review)
         {
-            $this -> $IDUsuario = $IDUsuario;
-            $this -> $IDProducto = $IDProducto;
-            $this -> $Valoracion = $Valoracion;
-            $this -> $Reseña = $Reseña;
+            $this -> $User = $User;
+            $this -> $Product = $Product;
+            $this -> $Rating = $Rating;
+            $this -> $Review = $Review;
         }
 
-        public function getIDUsuario()
+        public function getUser()
         {
-                return $this->IDUsuario;
+                return $this->User;
         }
 
-        public function setIDUsuario($IDUsuario)
+        public function setUser($User)
         {
-                $this->IDUsuario = $IDUsuario;
+                $this->User = $User;
 
                 return $this;
         }
 
-        public function getIDProducto()
+        public function getProduct()
         {
-                return $this->IDProducto;
+                return $this->Product;
         }
 
-        public function setIDProducto($IDProducto)
+        public function setProduct($Product)
         {
-                $this->IDProducto = $IDProducto;
+                $this->Product = $Product;
 
                 return $this;
         }
 
-        public function getValoracion()
+        public function getRating()
         {
-                return $this->Valoracion;
+                return $this->Rating;
         }
 
-        public function setValoracion($Valoracion)
+        public function setRating($Rating)
         {
-                $this->Valoracion = $Valoracion;
+                $this->Rating = $Rating;
 
                 return $this;
         }
 
-        public function getReseña()
+        public function getReview()
         {
-                return $this->Reseña;
+                return $this->Review;
         }
 
-        public function setReseña($Reseña)
+        public function setReview($Review)
         {
-                $this->Reseña = $Reseña;
+                $this->Review = $Review;
 
                 return $this;
         }

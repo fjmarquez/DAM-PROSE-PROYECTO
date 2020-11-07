@@ -14,19 +14,19 @@
          * Si existe el registro, se devolverá el ID del user, en caso contrario devolverá false.
          */
 
-        public function esUserRegistrado($name, $password){
+        public function esUserRegistrado($mail, $password){
 
             //Abrimos la conexión   
             $this->openConection();
 
             $sql = "SELECT ID FROM ".self::SCHEMA.".".self::NAME_TABLE.
-            " WHERE Name = ? AND Password = ?";
+            " WHERE Mail = ? AND Password = ?";
 
             //Preparamos la consulta
             $stmt=$this->conexion->prepare($sql);
             
             //Añadimos los datos
-            $stmt->bind_param('ss', $name, $password);
+            $stmt->bind_param('ss', $mail, $password);
             
             //Ejecutamos la consulta y recogemos el resultado
             $stmt->execute();
@@ -101,7 +101,7 @@
         public function insertarUser($user){
 
             $sql="INSERT INTO ".self::SCHEMA.".".self::NAME_TABLE.
-                " (Mail, Password, Name, Admin) VALUES ('".$user->getCorreo()."', '".$user->getpassword()."', '".$user->getName()."','".$user->getAdmin()."')";
+                " (Mail, Password, Name, Admin) VALUES ('".$user->getMail()."', '".$user->getPassword()."', '".$user->getName()."','".$user->getAdmin()."')";
 
             parent::query($sql);
         }

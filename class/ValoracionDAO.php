@@ -6,19 +6,19 @@
     class ValoracionDAO extends DAO{
 
         const SCHEMA="ProyectoFranciscoManuel";
-        const NAME_TABLE="Valoraciones";
+        const NAME_TABLE="Ratings";
 
         /*
         *   Devuelve las valoraciones correspondientes a un producto
         */
 
-        public function obtenerValoracionesPorIDProducto($IDProducto){
+        public function obtenerValoracionesPorIDProducto($IDProduct){
             //Abrimos la conexion con la BD
             $this->openConection();
             //Definimos la consulta SQL
             $stmt = $this->conexion->prepare(
-                "SELECT * FROM ".self::SCHEMA.".".self::NAME_TABLE.
-                "WHERE IDProducto = ".$IDProducto
+                "SELECT IDUser, Rating, Review FROM ".self::SCHEMA.".".self::NAME_TABLE.
+                "WHERE IDProduct = ".$IDProduct
             );
             //Ejecutamos la consulta SQL
             $stmt->execute();
@@ -35,15 +35,24 @@
         public function obtenerArrayValoraciones($result){
             //Definimos el array de productos
             $valoraciones = array();
+
+            //Instanciamos un objeto UsuarioDAO y ProductoDAO
+            $usuarioDAO = new UserDAO();
+            $productoDAO = new ProductoDAO();
+
             //Iteramos los resultados obtenidos en una consulta a la BD
             for ($i=0;$i<$result->num_rows;$i++){
                 //Obtenemos el registro
                 $row = $result->fetch_assoc();
                 //Creamos el objeto producto y seteamos los valores
-                $valoracion = new Valoracion($row["IDUsuario"],
-                                             $row["IDProducto"], 
-                                             $row["Valoracion"], 
-                                             $row["Reseña"]
+
+                $usuario = $usuarioDAO->recuperarUser($row["IDUser"]);
+                $producto = $productoDAO->obtenerProductoPorID($row["IDProduct"]);
+
+                $valoracion = new Valoracion($usuario,
+                                             $producto,
+                                             $row["Rating"],
+                                             $row["Review"]
                                         );
                 
                 //Guardamos el objeto persona en la array
