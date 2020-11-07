@@ -1,20 +1,47 @@
+/* CSS LOGIN */
 .margintop{
     margin-top: 12%;
 }
 
 body{
-    background-color: #ABDAFC;
+    background-color: #97c9be;
 }
 
 .btn{
-    background-color: #8CFF98;
+    background-color: #5FBAA7;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    width: 100%;
+}
+
+input[type=text]{
+    border-radius: 10px;
+}
+
+.jumbotron{
+    background-color: #eaeaea;
+    
+}
+
+.btn:hover{
+    background-color: #54a392;
     color: white;
     font-weight: bold;
 }
 
-.btn:hover{
-    background-color: #60A561;
-    color: white;
-    font-weight: bold;
-    border: 0px;
+.logo{
+    max-height: 100px;
+    min-height: 50px;
+    max-width: 100px;
+    min-width: 50px;
+    margin-bottom: 40px;
+}
+
+.datosIncorrectos {
+    margin-top: 15px;
+    font-size: 14px !important;
+    color: red;
+    width: 100%;
+    text-align: center;
 }
