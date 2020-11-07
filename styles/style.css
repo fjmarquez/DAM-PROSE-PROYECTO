@@ -3,11 +3,11 @@
     margin-top: 12%;
 }
 
-body{
+.body-login{
     background-color: #97c9be;
 }
 
-.btn{
+.btn-login{
     background-color: #5FBAA7;
     color: white;
     font-weight: bold;
