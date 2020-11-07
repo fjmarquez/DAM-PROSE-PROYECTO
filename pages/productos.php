@@ -8,32 +8,30 @@
         <?php
             require('partials/navbar.php');
         ?>
+        <div class="container-fluid">
+            <div class="row">
+            <?php
+                require_once('../class/ProductoDAO.php');
 
-        <?php
-            require_once('../class/ProductoDAO.php');
+                $pDAO = new ProductoDAO();
 
-            $pDAO = new ProductoDAO();
+                $productos = $pDAO->obtenerTodosLosProductos();
 
-            
-
-            $productos = $pDAO->obtenerTodosLosProductos();
-
-            //echo gettype($productos);
-
-            //var_dump($productos);
-            //print_r($productos);
-
-            foreach($productos as $p) {
-                ?>
-                <div>
-                    <h1> <?= $p->getName() ?></h1>
-                    <p> <?= $p->getPrice() ?>€ </p>
-                    <p> <?= $p->getShortDescription() ?> </p>
-                    <p> <?= $p->getCategory()->getCategory() ?> </p>
-                </div>
-                <?php
-            }
-        ?> 
-        
+                foreach($productos as $p) {
+                    ?>
+                    
+                            <div class="col-md-3">
+                                <h1> <?= $p->getName() ?></h1>
+                                <p> <?= $p->getPrice() ?>€ </p>
+                                <p> <?= $p->getShortDescription() ?> </p>
+                                <p> <?= $p->getCategory()->getCategory() ?> </p>
+                            </div>
+                     
+                    
+                    <?php
+                }
+            ?> 
+            </div>
+        </div>
     </body>
 </html>
