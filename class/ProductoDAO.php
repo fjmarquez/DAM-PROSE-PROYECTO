@@ -2,6 +2,7 @@
 
     require_once "DAO.php";
     require_once "Producto.php";
+    require_once "CategoriaDAO.php";
 
     /*Clase Data Access Object para manipular la clase Usuario en una base de datos MySQL*/
     class ProductoDAO extends DAO{
@@ -61,7 +62,7 @@
                 //Obtenemos el registro
                 $row = $result->fetch_assoc();
 
-                $category = $categoriaDAO->recuperarCategoria($row[IDCategory]);
+                $category = $categoriaDAO->recuperarCategoria($row['IDCategory']);
 
                 $product = new Producto($row["ID"],
                     $row["Name"],
@@ -177,9 +178,10 @@
             for ($i=0;$i<$result->num_rows;$i++){
                 //Obtenemos el registro
                 $row = $result->fetch_assoc();
+                //var_dump($row);
                 //Creamos el objeto producto y seteamos los valores
 
-                $category = $categoriaDAO->recuperarCategoria($row[IDCategory]);
+                $category = $categoriaDAO->recuperarCategoria($row['IDCategory']);
 
                 $product = new Producto($row["ID"],
                                         $row["Name"],
@@ -191,9 +193,10 @@
                                         $row["Long_Description"],
                                         $row["Image"],
                                         $category);
-                
+                //var_dump($product);
                 //Guardamos el objeto persona en la array
                 $products[$i] = $product;
+                //var_dump($products);
             }
             return $products;
         }
