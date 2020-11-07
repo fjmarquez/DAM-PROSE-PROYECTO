@@ -20,7 +20,7 @@
     <body>
         <div class="container-fluid">
             <div class="row">
-                <div class="jumbotron margintop col-md-4 col-md-offset-4">
+                <div class="jumbotron margintop col-md-2 col-md-offset-5">
                     <h3 class="text-center">Sign In to TicZone</h3>
                     <form>
                         <div class="form-group">

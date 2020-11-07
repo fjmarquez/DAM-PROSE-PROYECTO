@@ -1,7 +1,7 @@
 <?php
 
     require_once "DAO.php";
-    require_once  "User.php";
+    require_once  "Usuario.php";
 
     /*Clase Data Access Object para manipular la clase User en una base de datos MySQL*/
     class UserDAO extends DAO
@@ -61,7 +61,6 @@
 
             $sql = "SELECT Name, Mail, Password, Admin FROM ".self::SCHEMA.".".self::NAME_TABLE.
             " WHERE ID = ?";
-            echo $sql;
 
             //Preparamos la consulta
             $stmt=$this->conexion->prepare($sql);

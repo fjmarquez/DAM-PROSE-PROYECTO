@@ -1,6 +1,15 @@
 <?php
     require_once "UsuarioDAO.php";
 
-    $login = new UsuarioDAO();
+    $login = new UserDAO();
 
-    $user = $login->esUsuarioRegistrado("Manuel", "prueba");
+    $user = $login->esUserRegistrado("manuel.caballero@iesnervion.es", "prueba");
+
+    if($user != false)
+    {
+        echo "Usuario Registrado";
+    }
+    else
+    {
+        echo "Usuario no registrado";
+    }
