@@ -11,7 +11,16 @@
     
     if($user != false)
     {
-        echo "Usuario Registrado";
+        //echo "Usuario Registrado";
+
+        session_start();
+
+        $_SESSION['ID'] = $user->getID();
+        $_SESSION['name'] = $user->getName();
+        $_SESSION['mail'] = $user->getMail();
+        $_SESSION['admin'] = $user->getAdmin();
+
+        header('Location: ../pages/productos.php');
     }
     else
     {

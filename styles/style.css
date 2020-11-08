@@ -3,6 +3,8 @@
     --DarkColor: #5FBAA7;
     --VeryDarkColor: #54a392;
     --nonWhite: #eaeaea;
+    --GrayColor: #404443;
+    --LightGrayColor: #848080;
 }
 
 /* CSS LOGIN */
@@ -66,7 +68,7 @@ input[type=text]{
 }
 
 .logoPoint {
-    color: #313433;
+    color: var(--GrayColor);
     font-weight: bold;
 }
 
@@ -94,7 +96,36 @@ nav .btn {
     color: white !important;
 }
 
-
-
-
 /* END NAVBAR */ 
+
+/* CSS PRODUCTS */
+
+.card-product {
+    /*margin-left: 10px !important;*/
+    /*margin-right: 10px !important;*/
+    margin-bottom: 15px !important;
+    margin-top: 15px !important;
+    border: 0px solid transparent;
+}
+
+.card-product:hover {
+    border: 0.5px solid var(--LightGrayColor);
+}
+
+.card-title {
+    font-size: 18px;
+}
+
+.btn-product{
+    background-color: #5FBAA7;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    
+}
+
+.price h5{
+    color: var(--VeryDarkColor);
+}
+
+/* END PRODUCTS */
