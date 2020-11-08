@@ -1,3 +1,10 @@
+:root{
+    --principalColor: #97c9be;
+    --DarkColor: #5FBAA7;
+    --VeryDarkColor: #54a392;
+    --nonWhite: #eaeaea;
+}
+
 /* CSS LOGIN */
 .margintop{
     margin-top: 12%;
@@ -45,3 +52,49 @@ input[type=text]{
     width: 100%;
     text-align: center;
 }
+
+/* END LOGIN */
+
+/* CSS NAVBAR */
+
+.navbar {
+    background-color: #97c9be !important;
+}
+
+.navbar-brand img{
+    margin-right: 5px;
+}
+
+.logoPoint {
+    color: #313433;
+    font-weight: bold;
+}
+
+nav input[type=text]{
+    border-radius: 10px;
+    background-color: var(--nonWhite);
+    box-shadow: var(--VeryDarkColor) !important;
+}
+
+nav input[type=text]:focus-visible{
+    background-color: var(--nonWhite);
+    box-shadow: var(--VeryDarkColor) !important;
+}
+
+nav .btn {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.nav-link {
+    color: var(--nonWhite) !important;
+}
+
+.active > a {
+    color: white !important;
+}
+
+
+
+
+/* END NAVBAR */ 
