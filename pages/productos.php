@@ -7,7 +7,7 @@ $pDAO = new ProductoDAO();
 $productos = $pDAO->obtenerTodosLosProductos();
 ?>
     <body>
-        <?=require_once('partials/navbar.php');?>
+        <?php require_once('partials/navbar.php');?>
         <div class="container-fluid">
             <div class="row">
                 <!-- BEGIN CARD -->
