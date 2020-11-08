@@ -64,7 +64,7 @@
 
                 $category = $categoriaDAO->recuperarCategoria($row['IDCategory']);
 
-                $product = new Producto($row["ID"],
+                $product = new Producto($ID,
                     $row["Name"],
                     $row["Stock"],
                     $row["Discount"],

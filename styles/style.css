@@ -1,8 +1,9 @@
 :root{
     --principalColor: #97c9be;
+    --lightPrincipalColor: #b6d8d2;
     --DarkColor: #5FBAA7;
     --VeryDarkColor: #54a392;
-    --nonWhite: #eaeaea;
+    --nonWhite: #f7f7f7;
     --GrayColor: #404443;
     --LightGrayColor: #848080;
 }
@@ -129,3 +130,12 @@ nav .btn {
 }
 
 /* END PRODUCTS */
+
+/* CSS DETALLE PRODUCTO */
+
+.breadcrumb {
+    margin-top: 10px;
+    background-color: var(--nonWhite);
+}
+
+/* END DETALLE PRODUCTO */

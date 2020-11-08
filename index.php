@@ -25,7 +25,7 @@
                             <img class="img-responsive center-block logo" src="img/logo.png" alt="logo">
                         </div>
                         <div class="form-group">
-                            <input class="form-control" type="text" placeholder="Usuario" name="mail"
+                            <input required class="form-control" type="email" placeholder="Usuario" name="mail"
                             <?php
                             if(isset($_GET['user'])){
                                 echo 'value="'.$_GET['user'].'"';
@@ -35,7 +35,7 @@
                         </div>
 
                         <div class="form-group">
-                            <input class="form-control" type="password" placeholder="Contraseña" name="password">
+                            <input required  class="form-control" type="password" placeholder="Contraseña" name="password">
                         </div>
 
                         <div class="text-center flex ">

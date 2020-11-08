@@ -1,10 +1,15 @@
-<?php session_start()?>
+<?php 
+  session_start();
+  if(!isset($_SESSION['name']) != null) {
+    header('Location: ../index.php');
+    }
+?>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
   <a class="navbar-brand" href="#">
     <img src="../img/logo.png" width="30" height="30" alt="">
     Elektro<span class="logoPoint">.</span>
   </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" >
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation" >
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarsExample04">
@@ -14,7 +19,7 @@
     </form>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item dropdown active">
-        <a class="nav-link dropdown-toggle" href=""id="dropdown04">
+        <a class="nav-link dropdown-toggle" href=""id="dropdown04" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Categorias
         </a>
         <div class="dropdown-menu" aria-labelledby="dropdown04">
@@ -36,7 +41,7 @@
     <ul class="navbar-nav">
       <li class="nav-item dropleft">
         <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Hola, <?php $_SESSION['name'] ?>
+          Hola, <?= $_SESSION['name'] ?>
         </a>
         <div class="dropdown-menu" aria-labelledby="dropdown04">
           <a class="dropdown-item" href="#">Mi perfil</a>
