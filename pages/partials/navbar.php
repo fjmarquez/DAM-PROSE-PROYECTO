@@ -4,7 +4,7 @@
     header('Location: ../index.php');
     }
 ?>
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
   <a class="navbar-brand" href="#">
     <img src="../img/logo.png" width="30" height="30" alt="">
     Elektro<span class="logoPoint">.</span>

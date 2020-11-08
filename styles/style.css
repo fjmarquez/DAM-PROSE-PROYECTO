@@ -8,6 +8,14 @@
     --LightGrayColor: #848080;
 }
 
+/* CSS GENERAL */
+
+body {
+    padding: 70px !important;
+}
+
+/* END GENERAL */
+
 /* CSS LOGIN */
 .margintop{
     margin-top: 12%;
@@ -134,8 +142,30 @@ nav .btn {
 /* CSS DETALLE PRODUCTO */
 
 .breadcrumb {
-    margin-top: 10px;
     background-color: var(--nonWhite);
 }
 
+.breadcrumb-item a {
+    color: var(--GrayColor) !important;
+}
+
+.details.price h5 {
+    font-size: 25px !important;
+}
+
+.stock {
+    color: rgb(255, 52, 52);
+}
+
+.text-danger {
+    color: rgb(255, 52, 52) !important;
+}
+
+.text-success {
+    color: var(--VeryDarkColor) !important;
+}
+
+.priceNoDiscount {
+    text-decoration: line-through;
+}
 /* END DETALLE PRODUCTO */
