@@ -32,7 +32,7 @@
                                 <div class="price text-success">
                                     <h5 class="mt-4"><?= $p->getPrice() ?>€</h5>
                                 </div>
-                                <a href="detalleProducto?id=<?= $p->getId() ?>" class="btn btn-product mt-3">
+                                <a href="detalleProducto.php?id=<?= $p->getId() ?>" class="btn btn-product mt-3">
                                     Ver ficha
                                 </a>
                             </div>
