@@ -9,8 +9,8 @@ $cDAO = new CategoriaDAO();
 $categorias = $cDAO->obtenerTodasLasCategorias();
 //var_dump($producto);
 ?>
-<div class="col-md-12">
-    <form action="../action/actionProducto.php" method="POST" class="col-md-12" enctype="multipart/form-data">
+
+    <form action="../action/actionProducto.php" method="POST" class="col-md-12 mt-5" enctype="multipart/form-data">
         <div class="form-group row">
             <label class="col-md-4" for="nombreProducto">Nombre: </label>
             <input required id="nombreProducto" name="nombreProducto" class="form-control col-md-8" type="text" maxlength="100">
@@ -21,9 +21,9 @@ $categorias = $cDAO->obtenerTodasLasCategorias();
         </div>
         <div class="form-group row">
             <label class="col-md-4" for="precioProducto">Precio: </label>
-            <input required id="precioProducto" name="precioProducto" class="form-control col-md-7" type="number" step=".01" min="1">
-            <div class="input-group-prepend col-md-1">
-                <span class="input-group-text" id="basic-addon1">€</span>
+            <input id="precioProducto" name="precioProducto" class="form-control col-md-7" type="number" step=".01" min="1">
+            <div class="input-group-prepend col-md-1 text-center">
+                <p class="input-group-text col-md-12" id="basic-addon1">Euros</p>
             </div>
         </div>
         <div class="form-group row">
@@ -32,7 +32,7 @@ $categorias = $cDAO->obtenerTodasLasCategorias();
         </div>
         <div class="form-group row">
             <label class="col-md-4" for="descripcionProducto">Descripción: </label>
-            <input required id="descripcionProducto" name="descripcionProducto" class="form-control col-md-8" type="text" maxlength="900">
+            <textarea required id="descripcionProducto" name="descripcionProducto" class="form-control col-md-8" type="text" maxlength="900"></textarea>
         </div>
         <div class="form-group row">
             <label class="col-md-4" for="primeProducto">Prime: </label>
@@ -53,8 +53,10 @@ $categorias = $cDAO->obtenerTodasLasCategorias();
         <div class="form-group row">
             <input  class="form-control" id="imagenProducto" name="imagenProducto" type="file">
         </div>
-        <div class="form-group">
-            <input type="submit" name="btnSubmitNuevoProducto">Crear nuevo producto</div>
+        <div class="form-group row">
+            <input type="submit" class="btn btn-product col-md-12" name="btnSubmitNuevoProducto" value="Crear"></input>
+        </div>
+        <div class="form-group row">
+            <input type="submit" class="btn btn-reset col-md-12" name="btnResetNuevo" value="Cancelar"></input>
         </div>
     </form>
-</div>

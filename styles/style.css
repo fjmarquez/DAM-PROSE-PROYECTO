@@ -18,7 +18,7 @@ body {
 
 /* CSS LOGIN */
 .margintop{
-    margin-top: 12%;
+    margin-top: 8%;
 }
 
 .body-login{
@@ -81,8 +81,8 @@ input[type=text]{
     font-weight: bold;
 }
 
-nav input[type=text]{
-    border-radius: 10px;
+input, select{
+    border-radius: 10px !important;
     background-color: var(--nonWhite);
     box-shadow: var(--VeryDarkColor) !important;
 }
@@ -130,7 +130,7 @@ nav .btn {
     color: white;
     font-weight: bold;
     border-radius: 10px;
-    
+    border: 0px solid transparent !important;
 }
 
 .price h5{
@@ -143,6 +143,7 @@ nav .btn {
 
 .breadcrumb {
     background-color: var(--nonWhite);
+    border-radius: 10px !important;
 }
 
 .breadcrumb-item a {
@@ -171,5 +172,29 @@ nav .btn {
 
 #descripcionProducto {
     height: 200px !important;
+}
+
+.btn-reset{
+    background-color: var(--LightGrayColor);
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 0px solid transparent !important;
+}
+
+.btn-reset:hover {
+    background-color: var(--GrayColor);
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 0px solid transparent !important;
+}
+
+.input-group-prepend > span {
+    text-align: center !important;
+}
+
+textarea {
+    border-radius: 10px !important;
 }
 /* END DETALLE PRODUCTO */

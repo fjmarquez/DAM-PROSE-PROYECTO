@@ -5,7 +5,7 @@
     }
 ?>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" href="productos.php">
     <img src="../img/logo.png" width="30" height="30" alt="">
     Elektro<span class="logoPoint">.</span>
   </a>
@@ -44,9 +44,16 @@
           Hola, <?= $_SESSION['name'] ?>
         </a>
         <div class="dropdown-menu" aria-labelledby="dropdown04">
+        <?php 
+            if ($_SESSION['admin'] == 1){
+              ?>
+              <a class="dropdown-item" href="nuevoProducto.php">Nuevo producto</a>
+              <?php
+            }
+          ?>
           <a class="dropdown-item" href="#">Mi perfil</a>
           <a class="dropdown-item" href="#">Mis valoraciones</a>
-          <a class="dropdown-item" href="#">Cerrar sesion</a>
+          <a class="dropdown-item" href="../action/cerrarSesion.php">Cerrar sesion</a>
         </div>
       </li>
     </ul>
