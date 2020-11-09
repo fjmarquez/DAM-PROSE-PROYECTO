@@ -37,29 +37,29 @@ $producto = $pDAO->obtenerProductoPorID($pID);
                     ?>
                 </div>
                 <div class="details price">
-                <div>
-                    <?php
-                    if ($producto->getStock() == 0) {
-                    ?>
-                        <div class="alert alert-secondary text-center" title="<?= $producto->getStock() ?>" role="alert">
-                            ¡Vaya! Lo sentimos mucho, pero este producto no esta disponible
-                        </div>
-                    <?php
-                    } elseif ($producto->getStock() < 5) {
-                    ?>
-                        <div class="alert alert-warning text-center" title="<?= $producto->getStock() ?>" role="alert">
-                            ¡Corre! Quedan muy pocas unidades
-                        </div>
-                    <?php
-                    }else{
-                        ?>
-                        <div class="alert alert-success text-center" title="<?= $producto->getStock() ?>" role="alert">
-                            ¡Estas de suerte! En stock
-                        </div>
+                    <div>
                         <?php
-                    }
-                    ?>
-                </div>
+                        if ($producto->getStock() == 0) {
+                        ?>
+                            <div class="alert alert-secondary text-center" title="<?= $producto->getStock() ?>" role="alert">
+                                ¡Vaya! Lo sentimos mucho, pero este producto no esta disponible
+                            </div>
+                        <?php
+                        } elseif ($producto->getStock() < 5) {
+                        ?>
+                            <div class="alert alert-warning text-center" title="<?= $producto->getStock() ?>" role="alert">
+                                ¡Corre! Quedan muy pocas unidades
+                            </div>
+                        <?php
+                        } else {
+                        ?>
+                            <div class="alert alert-success text-center" title="<?= $producto->getStock() ?>" role="alert">
+                                ¡Estas de suerte! En stock
+                            </div>
+                        <?php
+                        }
+                        ?>
+                    </div>
                     <?php
                     if ($producto->getDiscount() != null) {
                     ?>
