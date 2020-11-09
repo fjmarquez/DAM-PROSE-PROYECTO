@@ -116,21 +116,22 @@
         *   Inserta un nuevo producto en la base de datos
         */
 
-        private function insertarNuevoProducto($producto){
+        public function insertarNuevoProducto($producto){
             //Abrimos la conexion
             $this->openConection();
-            //Definimos el INSERT
-            $stmt = $this->conexion->prepare(
-                "INSERT INTO ".self::SCHEMA.".".self::NAME_TABLE.
-                "(Name, Stock, Discount, Prime, Price,
-                 Short_Description, Long_Description, Image, IDCategory) 
-                 VALUES (".$producto->getName().", ".
-                 $producto->getStock().", ".$producto->getDiscount().", ".
-                 $producto->getPrime().", ".$producto->getPrice().", ".
-                 $producto->getShortDescription().", ".$producto->getLongDescription().", ".
-                 $producto->getImage().", ".
-                 $producto->getIDCategory().")"
-            );
+            //Definimos la sentencia SQL
+            $sql = 
+            "INSERT INTO ".self::SCHEMA.".".self::NAME_TABLE.
+            "(Name, Stock, Discount, Prime, Price,
+             Short_Description, Long_Description, Image, IDCategory) 
+             VALUES ('".$producto->getName()."', ".
+             $producto->getStock().", ".$producto->getDiscount().", ".
+             $producto->getPrime().", ".$producto->getPrice().", '".
+             $producto->getShortDescription()."', '".$producto->getLongDescription()."', '".
+             $producto->getImage()."', ".
+             $producto->getCategory()->getID().")";
+            //Preparamos la conexion y la consulta
+            $stmt = $this->conexion->prepare($sql);
             //Realizamos el INSERT
             $stmt->execute();
             //Cerramos la conexion
@@ -142,19 +143,22 @@
         *   Edita un producto existente con los nuevos valores indicados
         */
 
-        private function editarProducto($product){
+        public function editarProducto($product){
             //Abrimos la conexion
             $this->openConection();
-            //Definimos el UPDATE
-            $stmt = $this->conexion->prepare(
-                "UPDATE ".self::SCHEMA.".".self::NAME_TABLE.
-                "SET Name = ".$product->getName().
-                ", Stock = ".$product->getStock().", Discount = ".$product->getDiscount().", Prime = ".
-                $product->getPrime().", Price = ".$product->getPrice().", Descripcion_Corta = "
-                .$product->getDescripcionCorta.", Long_Description = ".$product->getLongDescription().", Image = "
-                .$product->getImage().", IDCategory = ".$product->getCategory()->getID().
-                "WHERE ID = ".$product->getID()
-            );
+            //Definimos la sentencia SQL
+            $sql = "UPDATE ".self::SCHEMA.".".self::NAME_TABLE.
+            " SET Name = '".$product->getName().
+            "', Stock = ".$product->getStock().", Discount = ".$product->getDiscount().", Prime = ".
+            $product->getPrime().", Price = ".$product->getPrice().", Short_Description = ''"
+            .$product->getShortDescription().", Long_Description = '".$product->getLongDescription()."'
+            , Image = '".$product->getImage()."', IDCategory = ".$product->getCategory()->getID().
+            " WHERE ID = ".$product->getID();
+            echo $product->getPrime();
+            echo gettype($product->getPrime());
+            //echo $sql;
+            //Preparamos la conexion y la consulta
+            $stmt = $this->conexion->prepare($sql);
             //Realizamos el UPDATE
             $stmt->execute();
             //Cerramos la conexion

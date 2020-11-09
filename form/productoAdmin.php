@@ -15,7 +15,7 @@ $categorias = $cDAO->obtenerTodasLasCategorias();
          title="<?= $producto->getName() . " - " . $producto->getCategory()->getCategory() ?>">
 </div>
 
-<form class="col-md-7">
+<form class="col-md-7" method="post" enctype="multipart/form-data" action="../action/actionProducto.php">
     <input id="IDProducto" name="IDProducto" hidden value="<?= $pID ?>">
     <div class="form-group row">
         <label class="col-md-4" for="nombreProducto">Nombre: </label>
@@ -42,7 +42,7 @@ $categorias = $cDAO->obtenerTodasLasCategorias();
     </div>
     <div class="form-group row">
         <label class="col-md-4" for="primeProducto">Prime: </label>
-        <input id="primeProducto" name="Prime" type="checkbox"
+        <input id="primeProducto" name="primeProducto" type="checkbox"
             <?php
                 if($producto->getPrime() == 1)
                 {
@@ -57,12 +57,15 @@ $categorias = $cDAO->obtenerTodasLasCategorias();
                 foreach ($categorias as $categoria)
                 {
                     ?>
-                        <option <?php if($categoria->getID() == $producto->getCategory()->getID()){echo "selected";}?> ><?= $categoria->getCategory() ?></option>
+                        <option value="<?= $categoria->getID() ?>" <?php if($categoria->getID() == $producto->getCategory()->getID()){echo "selected";}?> ><?= $categoria->getCategory() ?></option>
                     <?php
                 }
             ?>
         </select>
     </div>
+    <div class="form-group row">
+            <input  class="form-control" id="imagenProducto" name="imagenProducto" type="file">
+        </div>
     <div class="form-group row">
         <button class="btn btn-primary" type="submit">Guardar</button>
         <button class="btn btn-dark" type="reset">Cancelar</button>
