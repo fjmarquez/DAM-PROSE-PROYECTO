@@ -168,4 +168,8 @@ nav .btn {
 .priceNoDiscount {
     text-decoration: line-through;
 }
+
+#descripcionProducto {
+    height: 200px !important;
+}
 /* END DETALLE PRODUCTO */
