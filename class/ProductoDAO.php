@@ -194,7 +194,7 @@
                                         $row["Image"],
                                         $category);
                 //var_dump($product);
-                //Guardamos el objeto persona en la array
+                //Guardamos el objeto product en el array
                 $products[$i] = $product;
                 //var_dump($products);
             }
