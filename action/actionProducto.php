@@ -1,9 +1,9 @@
 <?php
 
-require_once('../class/producto.php');
-require_once('../class/productoDAO.php');
-require_once('../class/categoriaDAO.php');
-require_once('../class/categoria.php');
+require_once('../class/Producto.php');
+require_once('../class/ProductoDAO.php');
+require_once('../class/CategoriaDAO.php');
+require_once('../class/Categoria.php');
 
 $cDAO = new CategoriaDAO();
 $pDAO = new ProductoDAO();
@@ -32,7 +32,7 @@ $pImagen = $_FILES['imagenProducto'];
 //echo $pID;
 //echo $pNombre;
 //echo $pStock;
-echo $pPrime;
+//echo $pPrime;
 //echo $pPrecio;
 //echo $pDescuento;
 //echo $pDescripcion;
