@@ -38,7 +38,8 @@ input[type=text]{
 }
 
 .jumbotron{
-    background-color: #eaeaea;
+    background-color: #eaeaea !important;
+    border-radius: 10px !important;
     
 }
 

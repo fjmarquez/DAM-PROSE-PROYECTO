@@ -17,6 +17,8 @@ require_once('partials/head.php');
                 {
                     require_once('../form/formProductoAdmin.php');
                 }
+
+                require_once('partials/valoracionesProducto.php');
             ?>
         </div>
     </div>
