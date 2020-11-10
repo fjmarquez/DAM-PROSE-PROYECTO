@@ -197,4 +197,16 @@ nav .btn {
 textarea {
     border-radius: 10px !important;
 }
+
+.btn-delete {
+    background-color: rgb(255, 52, 52) !important;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 0px solid transparent !important;
+}
+
+
+
+
 /* END DETALLE PRODUCTO */

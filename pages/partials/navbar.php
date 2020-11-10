@@ -53,7 +53,7 @@
           ?>
           <a class="dropdown-item" href="#">Mi perfil</a>
           <a class="dropdown-item" href="#">Mis valoraciones</a>
-          <a class="dropdown-item" href="../action/cerrarSesion.php">Cerrar sesion</a>
+          <a class="dropdown-item" href="../action/actionCerrarSesion.php">Cerrar sesion</a>
         </div>
       </li>
     </ul>

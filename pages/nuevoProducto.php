@@ -11,7 +11,7 @@ require_once('partials/head.php');
             <?php
                 if($_SESSION["admin"] == 1)
                 {
-                    require_once('../form/productoNuevo.php');
+                    require_once('../form/formProductoNuevo.php');
                 }
                 
             ?>

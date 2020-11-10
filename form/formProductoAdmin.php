@@ -71,10 +71,13 @@ $categorias = $cDAO->obtenerTodasLasCategorias();
             <input class="form-control" id="imagenProducto" name="imagenProducto" type="file">
         </div>
         <div class="form-group row">
-            <button class="btn col-md-12 mb-1 btn-product" type="submit">Guardar</button>
+            <input class="btn col-md-12 btn-product" type="submit" value="Guardar"></input>
+        </div>
+        <div class="from-group row ">
+            <input class="btn btn-reset mb-3 col-md-12" type="reset" value="Cancelar"></input>
         </div>
         <div class="from-group row">
-            <button class="btn btn-reset col-md-12" type="reset">Cancelar</button>
+            <input class="btn btn-delete col-md-12 form-control" onclick="location.href='productos.php?id=<?= $pID ?>'" type="button" value="Borrar este producto"></input>
         </div>
     </form>
 </div>

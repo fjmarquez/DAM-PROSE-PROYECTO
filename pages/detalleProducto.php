@@ -15,7 +15,7 @@ require_once('partials/head.php');
                 }
                 else
                 {
-                    require_once('../form/productoAdmin.php');
+                    require_once('../form/formProductoAdmin.php');
                 }
             ?>
         </div>
