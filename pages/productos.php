@@ -11,9 +11,11 @@
         <div class="container-fluid">
             <div class="row">
                 <?php 
-
-                    if(isset($_POST['busqueda'])){
-                        $productos = $pDAO->obtenerProductosPorNombre($_POST['busqueda']);
+                    if(isset($_GET['categoria'])){
+                        $productos = $pDAO->obtenerProductoPorCategoria($_GET['categoria']);
+                        require_once('partials/categoriaProductos.php');
+                    }elseif(isset($_GET['busqueda'])){
+                        $productos = $pDAO->obtenerProductosPorNombre($_GET['busqueda']);
                         require_once('partials/busquedaProductos.php');
                     }else {
                         $productos = $pDAO->obtenerTodosLosProductos();

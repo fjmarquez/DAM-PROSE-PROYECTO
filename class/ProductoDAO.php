@@ -95,7 +95,7 @@
             $this->openConection();
             //Definimos la consulta SQL
             $stmt = $this->conexion->prepare(
-                "SELECT ID, Name, Stock, Discount, Prime, Price, Short_Description, Long_Description, Image FROM ". self::SCHEMA.".".self::NAME_TABLE.
+                "SELECT ID, Name, Stock, Discount, Prime, Price, Short_Description, Long_Description, Image, IDCategory FROM ". self::SCHEMA.".".self::NAME_TABLE.
                 " WHERE IDCategory = ?"
             );
             //Especificamos los parametros necesarios para la consulta

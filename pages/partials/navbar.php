@@ -3,6 +3,9 @@
   if(!isset($_SESSION['name']) != null) {
     header('Location: ../index.php');
     }
+  require_once('../class/CategoriaDAO.php');
+  $cDAO = new CategoriaDAO();
+  $categorias = $cDAO->obtenerTodasLasCategorias();
 ?>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
   <a class="navbar-brand" href="productos.php">
@@ -13,7 +16,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarsExample04">
-    <form class="form-inline" method="POST" action="productos.php">
+    <form class="form-inline" method="GET" action="productos.php">
       <input class="form-control" name="busqueda" type="text" placeholder="Buscar" required>
       <input class="btn" type="submit" value="&#128269;">
     </form>
@@ -23,9 +26,13 @@
           Categorias
         </a>
         <div class="dropdown-menu" aria-labelledby="dropdown04">
-          <a class="dropdown-item" href="#">Componentes</a>
-          <a class="dropdown-item" href="#">Perifericos</a>
-          <a class="dropdown-item" href="#">Video/Audio</a>
+          <?php
+          foreach ($categorias as $c){
+          ?>
+          <a class="dropdown-item" href="productos.php?categoria=<?= $c->getID() ?>"><?= $c->getCategory() ?></a>
+          <?php
+          }
+          ?>
         </div>
       </li>
       <li class="nav-item">

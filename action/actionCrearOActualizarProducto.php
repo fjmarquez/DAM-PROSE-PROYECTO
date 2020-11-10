@@ -77,5 +77,5 @@ if ($pID == 0){
     $pDAO->editarProducto($producto);
 }
 
-//header('Location: ../pages/detalleProducto.php?id='.$pID);
-header('Location: ../pages/productos.php');
+header('Location: ../pages/detalleProducto.php?id='.$pID);
+//header('Location: ../pages/productos.php');

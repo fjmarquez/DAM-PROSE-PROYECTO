@@ -77,6 +77,11 @@ input[type=text]{
     margin-right: 5px;
 }
 
+.dropdown-item.active, .dropdown-item:active {
+    color: #fff !important;
+    background-color: var(--VeryDarkColor) !important;
+}
+
 .logoPoint {
     color: var(--GrayColor);
     font-weight: bold;
@@ -230,6 +235,11 @@ textarea {
 
 .estrella:hover ~ .estrella {
     color:orange !important;
+}
+
+.estrellaMarcada {
+    color: orange;
+    font-size: 26px !important;
 }
 
 .clasificacion, .resenaUsuarios{

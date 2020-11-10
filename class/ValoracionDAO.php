@@ -98,17 +98,17 @@
             //Definimos la sentencia SQL
             $sql = "INSERT INTO ".self::SCHEMA.".".self::NAME_TABLE.
                 "(IDUser, IDProduct, Rating, Review) 
-                VALUES ('".$valoracion->getUsert()->getID()."', ".
-                $valoracion->getProduct()->getID().", ".$valoracion->getRating().", ".
-                $valoracion->getReview().")";
+                VALUES (".$valoracion->getUser()->getID().", ".
+                $valoracion->getProduct()->getID().", ".$valoracion->getRating().", '".
+                $valoracion->getReview()."')";
 
             echo($sql);
             //Preparamos la conexion y la consulta
-            //$stmt = $this->conexion->prepare($sql);
+            $stmt = $this->conexion->prepare($sql);
             //Realizamos el INSERT
-            //$stmt->execute();
+            $stmt->execute();
             //Cerramos la conexion
-            //$this->closeConection();
+            $this->closeConection();
 
         }
     }
