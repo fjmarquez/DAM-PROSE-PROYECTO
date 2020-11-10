@@ -3,4 +3,4 @@ require_once ("ValoracionDAO.php");
 
 $vDAO = new ValoracionDAO();
 
-$vDAO->obtenerValoracionesPorIDProducto(1);
+$valoracion = $vDAO->obtenerValoracionesPorIDProducto(1);

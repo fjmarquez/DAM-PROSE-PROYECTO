@@ -1,5 +1,4 @@
 <?php
-
     /*
      * Nombre de la clase: Valoracion
      *
@@ -16,6 +15,8 @@
      *
      * Métodos Añadidos: No hay
      */
+    require_once('Usuario.php');
+    require_once('ProductoDAO.php');
 
     class Valoracion{
         private $User;
@@ -23,12 +24,12 @@
         private $Rating;
         private $Review;
 
-        function __construct($User, $Product, $Rating, $Review)
+        function __construct($Rating, $Review, $User, $Product)
         {
-            $this -> $User = $User;
-            $this -> $Product = $Product;
-            $this -> $Rating = $Rating;
-            $this -> $Review = $Review;
+            $this -> User = $User;
+            $this -> Product = $Product;
+            $this -> Rating = $Rating;
+            $this -> Review = $Review;
         }
 
         public function getUser()

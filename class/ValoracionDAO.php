@@ -72,14 +72,15 @@
 
                 //Creamos el objeto producto y seteamos los valores
                 $usuario = $usuarioDAO->recuperarUser($row["IDUser"]);
-                var_dump($usuario);
+                //$newuser = new Usuario()
                 $producto = $productoDAO->obtenerProductoPorID($row["IDProduct"]);
-                var_dump($producto);
+                
 
-                $valoracion = new Valoracion($usuario,
-                                             $producto,
+                $valoracion = new Valoracion(
                                              $row["Rating"],
-                                             $row["Review"]);
+                                             $row["Review"],
+                                             $usuario,
+                                             $producto);
 
                 var_dump($valoracion);
                 
