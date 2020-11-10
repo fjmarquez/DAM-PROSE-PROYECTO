@@ -32,6 +32,28 @@
             return $valoraciones;
         }
 
+        /*
+        *   Devuelve la valoración media correspondientes a un producto
+        */
+        public function obtenerValoracionMediaPorProducto($IDProduct){
+            //Abrimos la conexion con la BD
+            $this->openConection();
+            //Definimos la consulta SQL
+            $stmt = $this->conexion->query(
+                "SELECT ".self::SCHEMA.".ValoracionMediaProducto(".$IDProduct.") AS Media"
+            );
+
+            //Recibimos los datos de la consulta
+            $row = $stmt->fetch_assoc();
+
+            $media = ($row["Media"]);
+
+            //Cerramos la conexion
+            $this->closeConection();
+            //Devolvemos la media
+            return $media;
+        }
+
         public function obtenerArrayValoraciones($result){
             //Definimos el array de productos
             $valoraciones = array();
