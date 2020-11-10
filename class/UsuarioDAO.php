@@ -57,7 +57,7 @@
         public function recuperarUser($IDUser){
 
             //Abrimos la conexión
-            //$this->openConection();
+            $this->openConection();
 
             $sql = "SELECT Name, Mail, Password, Admin FROM ".self::SCHEMA.".".self::NAME_TABLE.
             " WHERE ID = ?";
@@ -90,7 +90,7 @@
             }
 
             //Cerramos la conexión
-            //$this->closeConection();
+            $this->closeConection();
 
             //Devolvemos el resultado
             return $user;

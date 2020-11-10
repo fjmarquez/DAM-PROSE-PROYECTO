@@ -2,6 +2,8 @@
 
     require_once "DAO.php";
     require_once "Valoracion.php";
+    require_once "ProductoDAO.php";
+    require_once "UsuarioDAO.php";
 
     class ValoracionDAO extends DAO{
 
@@ -17,9 +19,10 @@
             $this->openConection();
             //Definimos la consulta SQL
             $stmt = $this->conexion->prepare(
-                "SELECT IDUser, Rating, Review FROM ".self::SCHEMA.".".self::NAME_TABLE.
-                "WHERE IDProduct = ".$IDProduct
+                "SELECT IDProduct, IDUser, Rating, Review FROM ".self::SCHEMA.".".self::NAME_TABLE.
+                " WHERE IDProduct = ".$IDProduct
             );
+
             //Ejecutamos la consulta SQL
             $stmt->execute();
             //Recibimos los datos de la consulta
@@ -66,21 +69,47 @@
             for ($i=0;$i<$result->num_rows;$i++){
                 //Obtenemos el registro
                 $row = $result->fetch_assoc();
-                //Creamos el objeto producto y seteamos los valores
 
+                //Creamos el objeto producto y seteamos los valores
                 $usuario = $usuarioDAO->recuperarUser($row["IDUser"]);
+                var_dump($usuario);
                 $producto = $productoDAO->obtenerProductoPorID($row["IDProduct"]);
+                var_dump($producto);
 
                 $valoracion = new Valoracion($usuario,
                                              $producto,
                                              $row["Rating"],
-                                             $row["Review"]
-                                        );
+                                             $row["Review"]);
+
+                var_dump($valoracion);
                 
                 //Guardamos el objeto persona en la array
                 $valoraciones[$i] = $valoracion;
             }
             return $valoraciones;
+        }
+
+        /*
+        *   Inserta una nueva valoracion en la base de datos
+        */
+
+        public function insertarNuevaValoracion($valoracion){
+            //Abrimos la conexion
+            $this->openConection();
+            //Definimos la sentencia SQL
+            $sql =
+                "INSERT INTO ".self::SCHEMA.".".self::NAME_TABLE.
+                "(IDUser, IDProduct, Rating, Review) 
+                VALUES ('".$valoracion->getUsert()->getID()."', ".
+                $valoracion->getProduct()->getID().", ".$valoracion->getRating().", ".
+                $valoracion->getReview().")";
+            //Preparamos la conexion y la consulta
+            $stmt = $this->conexion->prepare($sql);
+            //Realizamos el INSERT
+            $stmt->execute();
+            //Cerramos la conexion
+            $this->closeConection();
+
         }
     }
 
