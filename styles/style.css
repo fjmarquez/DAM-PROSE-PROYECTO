@@ -207,7 +207,57 @@ textarea {
     border: 0px solid transparent !important;
 }
 
-
-
+.btn-delete:hover {
+    background-color: rgb(233, 47, 47) !important;
+}
 
 /* END DETALLE PRODUCTO */
+
+/* CSS VALORACIONES */
+
+.oculto { 
+    display:none !important;
+}
+
+.estrella {
+    color: var(--GrayColor) !important;
+    font-size: 26px !important;
+}
+
+.estrella:hover {
+    color:orange !important;
+}
+
+.estrella:hover ~ .estrella {
+    color:orange !important;
+}
+
+.clasificacion, .resenaUsuarios{
+    direction: rtl !important;/* right to left */
+    unicode-bidi: bidi-override !important;/* bidi de bidireccional */
+}
+
+.resenaUsuarios {
+    /*pointer-events:none !important;*/
+}
+
+.clasificacion > input[type = "radio"]:checked ~ .estrella {
+    color:orange !important;
+}
+
+.display-5 {
+    margin-top: -30px !important;
+    font-size: 30px !important;
+
+}
+
+#textoValoracion {
+    height: 120px !important;
+}
+
+.btn-valoracion {
+    margin-top: 10px !important;
+    margin-bottom: -45px !important;
+}
+
+/* END VALORACIONES */

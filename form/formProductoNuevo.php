@@ -32,7 +32,7 @@ $categorias = $cDAO->obtenerTodasLasCategorias();
         </div>
         <div class="form-group row">
             <label class="col-md-4" for="descripcionProducto">Descripción: </label>
-            <textarea required id="descripcionProducto" name="descripcionProducto" class="form-control col-md-8" type="text" maxlength="900"></textarea>
+            <textarea required id="descripcionProducto" name="descripcionProducto" class="form-control col-md-8" maxlength="900"></textarea>
         </div>
         <div class="form-group row">
             <label class="col-md-4" for="primeProducto">Prime: </label>
