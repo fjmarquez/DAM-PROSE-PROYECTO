@@ -113,6 +113,31 @@
         }
 
         /*
+        *   Devuelve los productos asociados al nombre pasado por parámetros
+        */
+
+        public function obtenerProductosPorNombre($nombreProducto){
+            //Abrimos la conexion
+            $this->openConection();
+            //Definimos la consulta SQL
+            $stmt = $this->conexion->prepare(
+                "SELECT ID, Name, Stock, Discount, Prime, Price, Short_Description, Long_Description, Image, IDCategory FROM ". self::SCHEMA.".".self::NAME_TABLE.
+                " WHERE Name LIKE '%".$nombreProducto."%'"
+            );
+
+            //Ejecutamos la consulta SQL
+            $stmt->execute();
+            //Recibimos los datos de la consulta
+            $result = $stmt->get_result();
+            //Parseamos los datos recibidos como un array de productos
+            $products = $this->obtenerArrayProductos($result);
+            //Cerramos la conexion
+            $this->closeConection();
+            //Devolvemos el array con los productos
+            return $products;
+        }
+
+        /*
         *   Inserta un nuevo producto en la base de datos
         */
 
@@ -164,6 +189,25 @@
             //Cerramos la conexion
             $this->closeConection();
             
+        }
+
+        /*
+        *   Elimina un producto existente a partir del ID pasado por parámetros
+        */
+
+        public function eliminarProducto($IDProducto){
+            //Abrimos la conexion
+            $this->openConection();
+            //Definimos la sentencia SQL
+            $sql = "DELETE FROM ".self::SCHEMA.".".self::NAME_TABLE." WHERE ID = ".$IDProducto;
+            //echo $sql;
+            //Preparamos la conexion y la consulta
+            $stmt = $this->conexion->prepare($sql);
+            //Realizamos el UPDATE
+            $stmt->execute();
+            //Cerramos la conexion
+            $this->closeConection();
+
         }
 
 
