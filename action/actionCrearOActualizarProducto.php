@@ -17,8 +17,13 @@ if(isset($_POST['IDProducto'])){
 $pNombre = $_POST['nombreProducto'];
 $pStock = $_POST['stockProducto'];
 $pPrecio = $_POST['precioProducto'];
-$pDescuento = $_POST['descuentoProducto'];
 $pDescripcion = $_POST['descripcionProducto'];
+
+if ($_POST['descuentoProducto'] == 0 || $_POST['descuentoProducto'] == ''){
+    $pDescuento = 'NULL';
+}else {
+    $pDescuento = $_POST['descuentoProducto'];
+}
 
 if (isset($_POST['primeProducto']) && $_POST['primeProducto'] == true){
     $pPrime = 1;
@@ -50,14 +55,11 @@ $existeImagen = false;
 if ($_FILES['imagenProducto']['size'] > 0){
     $existeImagen = true;
     if (move_uploaded_file($_FILES['imagenProducto']['tmp_name'], $fichero_subido)) {
-        //echo "El fichero es válido y se subió con éxito.\n";
+        echo "El fichero es válido y se subió con éxito.\n";
     } else {
-        //echo "¡Posible ataque de subida de ficheros!\n";
+        echo "¡Posible ataque de subida de ficheros!\n";
     }
 }
-
-
-
 
 if ($pID == 0){
     $producto = new Producto($pID, $pNombre, $pStock, $pDescuento,
@@ -74,3 +76,6 @@ if ($pID == 0){
     }
     $pDAO->editarProducto($producto);
 }
+
+//header('Location: ../pages/detalleProducto.php?id='.$pID);
+header('Location: ../pages/productos.php');

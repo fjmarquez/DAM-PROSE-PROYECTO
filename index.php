@@ -1,3 +1,10 @@
+<?php 
+  session_start();
+  if(isset($_SESSION['name']) != null) {
+    header('Location: pages/productos.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="es">
     <head>

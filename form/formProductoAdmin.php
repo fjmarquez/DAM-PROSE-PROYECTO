@@ -20,7 +20,7 @@ $categorias = $cDAO->obtenerTodasLasCategorias();
             <li class="breadcrumb-item active" aria-current="page"><?= $producto->getCategory()->getCategory() ?></li>
         </ol>
     </nav>
-    <form method="post" enctype="multipart/form-data" action="../action/actionProducto.php">
+    <form method="post" enctype="multipart/form-data" action="../action/actionCrearOActualizarProducto.php">
         <input id="IDProducto" name="IDProducto" hidden value="<?= $pID ?>">
         <div class="form-group row">
             <label class="col-md-4" for="nombreProducto">Nombre: </label>
@@ -77,7 +77,7 @@ $categorias = $cDAO->obtenerTodasLasCategorias();
             <input class="btn btn-reset mb-3 col-md-12" type="reset" value="Cancelar"></input>
         </div>
         <div class="from-group row">
-            <input class="btn btn-delete col-md-12 form-control" onclick="location.href='productos.php?id=<?= $pID ?>'" type="button" value="Borrar este producto"></input>
+            <input class="btn btn-delete col-md-12 form-control" onclick="location.href='../action/actionEliminarProducto.php?id=<?= $pID ?>'" type="button" value="Borrar este producto"></input>
         </div>
     </form>
 </div>

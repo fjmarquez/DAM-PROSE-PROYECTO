@@ -13,8 +13,8 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarsExample04">
-    <form class="form-inline">
-      <input class="form-control" type="text" placeholder="Buscar">
+    <form class="form-inline" method="POST" action="productos.php">
+      <input class="form-control" name="busqueda" type="text" placeholder="Buscar" required>
       <input class="btn" type="submit" value="&#128269;">
     </form>
     <ul class="navbar-nav mr-auto">

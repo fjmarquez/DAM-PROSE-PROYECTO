@@ -10,7 +10,7 @@ $categorias = $cDAO->obtenerTodasLasCategorias();
 //var_dump($producto);
 ?>
 
-    <form action="../action/actionProducto.php" method="POST" class="col-md-12 mt-5" enctype="multipart/form-data">
+    <form action="../action/actionCrearOActualizarProducto.php" method="POST" class="col-md-12 mt-5" enctype="multipart/form-data">
         <div class="form-group row">
             <label class="col-md-4" for="nombreProducto">Nombre: </label>
             <input required id="nombreProducto" name="nombreProducto" class="form-control col-md-8" type="text" maxlength="100">
